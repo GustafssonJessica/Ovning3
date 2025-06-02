@@ -8,10 +8,10 @@ namespace Ovning3
 {
     internal abstract class Pokemon
     {
-        private string _name;
-        private int _level;
-        public ElementType Type { get; set; }
-        public List<Attack> Attacks { get; set; } //should be passed in and set via the constructor. This list will represent the attacks that a Pokémon knows
+        protected string _name;
+        protected int _level;
+        protected ElementType Type { get; set; }
+        protected List<Attack> Attacks { get; set; } //should be passed in and set via the constructor. This list will represent the attacks that a Pokémon knows
 
         public void RandomAttack()
         {
