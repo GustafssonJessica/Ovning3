@@ -45,6 +45,9 @@ namespace Ovning3
                 pokemon.RandomAttack();
 
                 //ToDO kör cast-grejen här med IEvolvable
+                foreach (IEvolvable evolvablePokemon in pokemons)
+                {
+                }
 
             }
 
