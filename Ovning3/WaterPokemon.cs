@@ -8,9 +8,8 @@ namespace Ovning3
 {
     internal class WaterPokemon : Pokemon
     {
-        public WaterPokemon()
+        public WaterPokemon(string name, int level, List<Attack> attacks, ElementType type = ElementType.Water) : base(name, level, type, attacks) // ToDo - skicka med saker till basklassen??
         {
-            Type = ElementType.Water;
         }
 
     }

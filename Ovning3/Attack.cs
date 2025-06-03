@@ -26,7 +26,7 @@ namespace Ovning3
 
         public void Use(int level)
         {
-            Console.WriteLine($"{Name} hits with a power of {BasePower}"); //basepwer + level ska det vara
+            Console.WriteLine($"{Name} hits with a power of {BasePower + level}"); 
         }
     }
 
