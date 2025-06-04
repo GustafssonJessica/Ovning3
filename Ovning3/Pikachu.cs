@@ -11,7 +11,8 @@ namespace Ovning3
 
         public string EvolveName { get; } = "Raichu"; //Raichu verkar vara slutstationen för en pikashu, så därav ingen set-funktion. oklart om get behövs med
 
-        public Pikachu(string name, int level, List<Attack> attacks, ElementType type = ElementType.Electric) : base(name, level, attacks, type)
+        public Pikachu(string name, int level, List<Attack> attacks) 
+            : base(name, level, attacks)
         {
         }
 

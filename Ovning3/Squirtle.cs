@@ -8,7 +8,8 @@ namespace Ovning3
 {
     internal class Squirtle : WaterPokemon
     {
-        public Squirtle(string name, int level, List<Attack> attacks, ElementType type = ElementType.Water) : base(name, level, attacks, type)
+        public Squirtle(string name, int level, List<Attack> attacks) 
+            : base(name, level, attacks)
         {
         }
     }

@@ -8,7 +8,8 @@ namespace Ovning3
 {
     internal class Charmander : FirePokemon
     {
-        public Charmander(string name, int level, List<Attack> attacks, ElementType type = ElementType.Fire) : base(name, level, attacks, type)
+        public Charmander(string name, int level, List<Attack> attacks) 
+            : base(name, level, attacks)
         {
         }
     }
