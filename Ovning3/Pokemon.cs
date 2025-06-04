@@ -1,17 +1,21 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Ovning3
 {
+    //TOdo släck varningar + skriv till lärare gärna tar feedback på inkapslingen
     internal abstract class Pokemon
     {
-        protected string _name; //ska dessa vara private eller protected när det finns en get-set under?
-        protected int _level;
-        protected ElementType Type { get; set; } //eller ska det vara public? är ju ändå en get/set. ska väl inte gå att sätta efteråt dock? 
-        protected List<Attack> Attacks { get; set; } //should be passed in and set via the constructor. This list will represent the attacks that a Pokémon knows
+        private string _name; //privata så att subklasserna tvingas gå genom get/set för att ändra värdet
+        private int _level;
+        public ElementType Type { get; } //gör readonly då det inte ska behöva ändras elementtyp efter initialisering
+        public List<Attack> Attacks { get; } // TODO förstod det som att set inte behövs för att lägga till attacker efteråt, prova det
 
         public string Name
         {
@@ -25,7 +29,6 @@ namespace Ovning3
                 else
                 {
                     _name = "Unknown";
-                    throw new ArgumentException("Name must be between 2 and 15 characters long."); // todo oklart om kasta exception
                 }
             }
         }
@@ -41,50 +44,46 @@ namespace Ovning3
                 else
                 {
                     _level = 1;
-                    throw new ArgumentOutOfRangeException("Level must be between 1 and 100."); // todo oklart om kasta exception
                 }
             }
         }
 
-        protected Pokemon(string name, int level, ElementType type, List<Attack> attacks) //TOdo. lägga till de andra fälten utöver attacks?
+        protected Pokemon(string name, int level, ElementType type, List<Attack> attacks)
         {
             Name = name;
             Level = level;
             Type = type;
-            Attacks = new List<Attack>(attacks); //TOdo ska den initialiseras här eller i egenskapen?
+            Attacks = attacks;
         }
 
 
         public void RandomAttack()
         {
-            // Picks a random attack from the list of attacks and invokes its .Use-method.
-            int randomAttack = new Random().Next(Attacks.Count); //börjar den på 0? 
+            // Väljer en slumpmässig attack från listan av attacker och anropar dess .Use-metod.
+            int randomAttack = new Random().Next(Attacks.Count);
             Attacks[randomAttack].Use(Level);
-
         }
 
         public void Attack()
         {
-            // Todo Man får  välja attack själv här, men inte via metodanrop?? Lets the user pick an attack from the list of attacks and invoke its .Use-method.
+            //Låter användaren välja en attack från listan av attacker och anropar dess .Use-metod.
 
             Console.WriteLine("Choose an attack by typing its number:; ");
             for (int i = 0; i < Attacks.Count; i++)
             {
-                Console.WriteLine($"{i + 1}: {Attacks[i].Name}"); //(Type: {Attacks[i].Type}, Power: {Attacks[i].BasePower})
+                Console.WriteLine($"{i + 1}: {Attacks[i].Name}");
             }
 
-            int choice = int.Parse(Console.ReadLine()) - 1;  //ändra så det inte kan krascha om det ej är int. Och se om mitt -1 funkar
+            int choice = int.Parse(Console.ReadLine()) - 1;  //Todo ändra så det inte kan krascha om det ej är int. Ex skriv bara ingen attack utfördes pga ogiltig inmatning
 
             Attacks[choice].Use(Level);
         }
 
         public void RaiseLevel()
         {
-            // That should increment the level of the given pokemon and print that the pokemon has leveled up.
+            // Ökar nivån på den angivna pokémonen och skriva ut att pokémonen har gått upp i nivå.
             Level++;
             Console.WriteLine($"{Name} has leveled up! New level is {Level}");
         }
-
-
     }
 }

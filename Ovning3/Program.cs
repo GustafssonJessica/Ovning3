@@ -45,7 +45,7 @@ F: If you create a method that only exists on Pikachu, why can’t you call it d
             var spark = new Attack("Spark", ElementType.Electric, 5);
 
             List<Pokemon> pokemons = new List<Pokemon>(); //todo bestäm om ha var under
-            var charmander1 = new Charmander("Charmander", 5, new List<Attack> { flamethrower, ember });
+            var charmander1 = new Charmander("C", 5, new List<Attack> { flamethrower, ember });
             var charmander2 = new Charmander("Charmander2", 10, new List<Attack> { flamethrower, ember });
             var squirtle1 = new Squirtle("Squirtle", 7, new List<Attack> { waterGun, bubble });
             var squirtle2 = new Squirtle("Squirtle2", 14, new List<Attack> { waterGun, bubble });
