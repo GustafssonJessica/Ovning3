@@ -76,7 +76,6 @@ namespace Ovning3
             }
 
             bool validNumber = int.TryParse(Console.ReadLine(), out int choice); //ToDo flytta till egen metod för validering?
-            //todo ändra så att det inte krashar om slänger in fel nummer
 
             if (validNumber)
             {
@@ -87,7 +86,7 @@ namespace Ovning3
                 }
                 else
                 {
-                    Console.WriteLine("Invalid choice. No attack performed.");
+                    Console.WriteLine("Invalid number selected. No attack performed.");
                 }
             }
             else

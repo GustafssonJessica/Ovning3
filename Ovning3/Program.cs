@@ -25,7 +25,6 @@ F: If you create a method that only exists on Pikachu, why can’t you call it d
 
     internal class Program
     {
-        //TODO lägg till validering ex att man väljer giltig attack
         static void Main(string[] args)
         {
             //Skapar attacker
@@ -72,5 +71,3 @@ F: If you create a method that only exists on Pikachu, why can’t you call it d
     }
 }
 
-
-//ToDo -bestäm hur släcka varningar
