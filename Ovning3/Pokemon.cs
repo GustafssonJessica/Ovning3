@@ -55,7 +55,7 @@ namespace Ovning3
             Name = name;
             Level = level;
             Type = type;
-            Attacks = attacks; //här tilldelas variabeln i fältet Attacks en referens till listan som skickas in i konstruktorn
+            Attacks = attacks; //här tilldelas egenskapen Attacks en referens till listan som skickas in i konstruktorn
         }
 
 
