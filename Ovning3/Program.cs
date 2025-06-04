@@ -32,6 +32,7 @@ F: If you create a method that only exists on Pikachu, why can’t you call it d
 
     internal class Program
     {
+        //TODO lägg till validering ex att man väljer giltig attack
         static void Main(string[] args)
         {
             var flamethrower = new Attack("Flamethrower", ElementType.Fire, 12);
