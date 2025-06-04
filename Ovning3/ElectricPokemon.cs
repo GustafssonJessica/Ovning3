@@ -9,7 +9,7 @@ namespace Ovning3
     internal class ElectricPokemon : Pokemon
     {
         public ElectricPokemon(string name, int level, List<Attack> attacks)
-            : base(name, level, ElementType.Electric, attacks) // ToDo rätt sätt att skicka med elementType?
+            : base(name, level, ElementType.Electric, attacks) //I samtliga subklasser skickas elementtypen med in i baskonstruktorn
         {
         }
     }

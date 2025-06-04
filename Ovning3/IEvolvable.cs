@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ovning3
 {
-    internal interface IEvolvable //ToDo minst en pokemon ska implementera detta interface, ex pikachu
+    internal interface IEvolvable //Pikachu implementerar detta interface
     {
         void Evolve();
     }

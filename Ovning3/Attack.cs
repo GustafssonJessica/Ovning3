@@ -8,7 +8,7 @@ namespace Ovning3
 {
     internal class Attack
     {
-        public string Name { get; } //Bedömer att det ej bör finnas behov att ändra egenskaper på attack efter initialisering, så gör den readonly
+        public string Name { get; } //Bedömer att det ej bör finnas behov att ändra egenskaper på attack efter initialisering, därav readonly
         public ElementType Type { get; }
         public int BasePower { get; }
 
