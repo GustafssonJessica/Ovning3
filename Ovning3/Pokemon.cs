@@ -8,9 +8,9 @@ namespace Ovning3
 {
     internal abstract class Pokemon
     {
-        protected string _name;
+        protected string _name; //ska dessa vara private eller protected när det finns en get-set under?
         protected int _level;
-        protected ElementType Type { get; set; } //eller ska det vara public? är ju ändå en get/set
+        protected ElementType Type { get; set; } //eller ska det vara public? är ju ändå en get/set. ska väl inte gå att sätta efteråt dock? 
         protected List<Attack> Attacks { get; set; } //should be passed in and set via the constructor. This list will represent the attacks that a Pokémon knows
 
         public string Name
@@ -25,7 +25,7 @@ namespace Ovning3
                 else
                 {
                     _name = "Unknown";
-                    throw new ArgumentException("Name must be between 2 and 15 characters long."); //oklart om kasta exception
+                    throw new ArgumentException("Name must be between 2 and 15 characters long."); // todo oklart om kasta exception
                 }
             }
         }
@@ -41,17 +41,17 @@ namespace Ovning3
                 else
                 {
                     _level = 1;
-                    throw new ArgumentOutOfRangeException("Level must be between 1 and 100."); //oklart om kasta exception
+                    throw new ArgumentOutOfRangeException("Level must be between 1 and 100."); // todo oklart om kasta exception
                 }
             }
         }
 
-        protected Pokemon(string name, int level, ElementType type, List<Attack> attacks) //lägga till de andra fälten utöver attacks?
+        protected Pokemon(string name, int level, ElementType type, List<Attack> attacks) //TOdo. lägga till de andra fälten utöver attacks?
         {
             Name = name;
             Level = level;
             Type = type;
-            Attacks = new List<Attack>(attacks); //ska den initialiseras här?
+            Attacks = new List<Attack>(attacks); //TOdo ska den initialiseras här eller i egenskapen?
         }
 
 
@@ -65,12 +65,12 @@ namespace Ovning3
 
         public void Attack()
         {
-            // Lets the user pick an attack from the list of attacks and invoke its .Use-method.
+            // Todo Man får  välja attack själv här, men inte via metodanrop?? Lets the user pick an attack from the list of attacks and invoke its .Use-method.
 
             Console.WriteLine("Choose an attack by typing its number:; ");
             for (int i = 0; i < Attacks.Count; i++)
             {
-                Console.WriteLine($"{i + 1}: {Attacks[i].Name} (Type: {Attacks[i].Type}, Power: {Attacks[i].BasePower})");
+                Console.WriteLine($"{i + 1}: {Attacks[i].Name}"); //(Type: {Attacks[i].Type}, Power: {Attacks[i].BasePower})
             }
 
             int choice = int.Parse(Console.ReadLine()) - 1;  //ändra så det inte kan krascha om det ej är int. Och se om mitt -1 funkar

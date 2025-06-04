@@ -10,7 +10,7 @@ namespace Ovning3
     {
 
 
-        public FirePokemon(string name, int level, List<Attack> attacks, ElementType type = ElementType.Fire) : base(name, level, type, attacks) //ToDo - skicka med saker till basklassen??
+        public FirePokemon(string name, int level, List<Attack> attacks, ElementType type = ElementType.Fire) : base(name, level, type, attacks) 
         {
         }
     }

@@ -8,7 +8,7 @@ namespace Ovning3
 {
     internal class Attack
     {
-        public string Name { get; set; }
+        public string Name { get; set; } //Todo bestäm om dessa under ska vara public eller ex helt eller delvis private
 
         public ElementType Type { get; set; }
 
@@ -24,7 +24,7 @@ namespace Ovning3
 
 
 
-        public void Use(int level)
+        public void Use(int level) 
         {
             Console.WriteLine($"{Name} hits with a power of {BasePower + level}"); 
         }
