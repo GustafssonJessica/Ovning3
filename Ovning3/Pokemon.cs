@@ -69,7 +69,7 @@ namespace Ovning3
         public void Attack()
         {
             //Låter användaren välja en attack från listan av attacker och anropar dess .Use-metod.
-            Console.WriteLine("Choose an attack by typing its number:; ");
+            Console.WriteLine("Choose an attack by typing its number: ");
             for (int i = 0; i < Attacks.Count; i++)
             {
                 Console.WriteLine($"{i + 1}: {Attacks[i].Name}");

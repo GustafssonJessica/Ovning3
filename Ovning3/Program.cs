@@ -48,8 +48,8 @@ F: If you create a method that only exists on Pikachu, why can’t you call it d
             var charmander2 = new Charmander("Charmander2", 10, new List<Attack> { flamethrower, ember });
             var squirtle1 = new Squirtle("Squirtle", 7, new List<Attack> { waterGun, bubble });
             var squirtle2 = new Squirtle("Squirtle2", 14, new List<Attack> { waterGun, bubble });
-            var pikachu1 = new Pikachu("Pikachu", 3, new List<Attack> { thunderbolt, spark });
-            var pikachu2 = new Pikachu("Pikachu2", 20, new List<Attack> { thunderbolt, spark });
+            var pikachu1 = new Pikachu("Pikachu", 5, new List<Attack> { thunderbolt, spark });
+            var pikachu2 = new Pikachu("Pikachu2", 10, new List<Attack> { thunderbolt, spark });
 
             // Skapar en lista och lägger till Pokémon
             List<Pokemon> pokemons = new List<Pokemon>();
