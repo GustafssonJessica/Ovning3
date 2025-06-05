@@ -19,6 +19,7 @@ namespace Ovning3
             BasePower = basePower;
         }
 
+        //Metod för att använda attacken, tar in ett level-värde som tillsammans med BasePower bestämmer hur stark attacken är
         public void Use(int level)
         {
             Console.WriteLine($"{Name} hits with a power of {BasePower + level}");

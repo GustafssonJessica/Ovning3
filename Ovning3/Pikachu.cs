@@ -8,10 +8,9 @@ namespace Ovning3
 {
     internal class Pikachu : ElectricPokemon, IEvolvable
     {
-
         public string EvolveName { get; } = "Raichu"; //Raichu verkar vara slutstationen för en pikashu, så därav ingen set-funktion
 
-        public Pikachu(string name, int level, List<Attack> attacks) 
+        public Pikachu(string name, int level, List<Attack> attacks)
             : base(name, level, attacks)
         {
         }
@@ -19,7 +18,7 @@ namespace Ovning3
         public void Evolve()
         {
             Level += 10;
-            Console.WriteLine($"Pikachu is evolving... Now it's {EvolveName}! Level {Level}!"); 
+            Console.WriteLine($"Pikachu is evolving... Now it's {EvolveName}! Level {Level}!");
         }
     }
 }
